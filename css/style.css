@@ -1,0 +1,107 @@
+body {
+    background: url(../img/site-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#tela-principal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1080px;
+}
+
+#tela-principal .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    background: #004e98;
+    color: white;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#tela-principal .topbar p {
+    font-size: 18px;
+}
+
+#tela-principal .topbar button {
+    border: 0;
+    padding: 5px;
+    width: 30px;
+    background: red;
+    color: white;
+    border-radius: 5px;
+}
+
+#tela-principal .corpo {
+    display: flex;
+    background: #2f2d2e;
+    height: 500px;
+}
+
+#tela-principal .corpo .files {
+    padding: 1rem;
+    color: white;
+    background: #424041;
+    width: 22%;
+}
+
+#tela-principal .corpo .files p.title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#tela-principal .corpo .files ul {
+    margin-top: 1rem;
+}
+
+#tela-principal .corpo .files ul li p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#tela-principal .corpo .files ul li p a {
+    color: white;
+}
+
+#tela-principal .corpo .conteudo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#tela-principal .corpo .conteudo header.tabs {
+    background: #4d4c4d;
+}
+
+#tela-principal .corpo .conteudo header.tabs ul {
+    display: flex;
+}
+
+#tela-principal .corpo .conteudo header.tabs ul li {
+    cursor: pointer;
+    padding: .5rem;
+    background: #7a7a7a;
+    color: white;
+    opacity: .5;
+}
+
+#tela-principal .corpo .conteudo header.tabs ul li:hover {
+    opacity: 1;
+}
+
+#tela-principal .corpo .conteudo header.tabs ul li.active {
+    opacity: 1;
+    color: black;
+    background: #c3c3c3;
+}
