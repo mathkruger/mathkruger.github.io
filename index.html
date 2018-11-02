@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Matheus Kruger</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <section id="tela-principal">
         <header class="topbar">
@@ -49,7 +53,8 @@
                     <li>
                         <p>
                             <i class="fab fa-whatsapp"></i>
-                            <a href="https://api.whatsapp.com/send?phone=5511959472884" target="_blank" rel="noopener noreferrer">+55 11 95947-2884</a>
+                            <a href="https://api.whatsapp.com/send?phone=5511959472884" target="_blank" rel="noopener noreferrer">+55
+                                11 95947-2884</a>
                         </p>
                     </li>
                 </ul>
@@ -58,16 +63,101 @@
             <div class="conteudo">
                 <header class="tabs">
                     <ul>
-                        <li data-target="" class="active">
-                            <i class="fab fa-js"></i> Education.js
+                        <li data-target="readme" class="active">
+                            <i class="fab fa-markdown"></i> readme.md
                         </li>
-                        <li data-target="">
-                            <i class="fab fa-php"></i> Skills.php
+                        <li data-target="education" class="">
+                            <i class="fab fa-js"></i> education.js
+                        </li>
+                        <li data-target="skills" class="">
+                            <i class="fab fa-php"></i> skills.php
+                        </li>
+
+                        <li data-target="professional-experiences" class="">
+                            <i class="fab fa-python"></i> professional-experiences.py
                         </li>
                     </ul>
                 </header>
+                <div class="codigos">
+                    <div class="codigo readme active">
+                        <pre>
+                            <code class="md">
+# Oi, eu sou o Matheus!
+
+Prazer em conhecê-lo! Se você está visitando este web fake editor de texto é porque está interessado
+no meu trabalho e/ou gostaria de me conhecer melhor. Bem, eu sou um cara super normal que
+ama codar por diversão e também para se sustentar. Gosto de música, jogos, animes, desenhos,
+ou seja, sou uma criança de 13 anos preso nesse corpinho de 21.
+
+Quer trocar uma ideia? É só me chamar, sou legal (pelo menos tento)
+
+## Instruções de uso
+
+Para navegar pelo meu currículo é só ir clicando nas abas ali em cima,
+tipo um VS Code rodando no Windows XP
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="codigo education">
+                        <pre>
+                            <code class="js">
+const education = [
+    {
+        institution: 'Fatec Itu',
+        degree: 'Analysis and Systems Development',
+        initialYear: 2015,
+        finalYear: 2017
+    },
+    {
+        institution: 'E.E. Prof. Cícero Siqueira Campos',
+        degree: 'High School',
+        initialYear: 2012,
+        finalYear: 2014
+    }
+]
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="codigo skills">
+                        <pre>
+                            <code class="php">
+$languages = [
+    "html" => "100%",
+    "css" => "80%",
+    "js" => "80%",
+    "php" => "75%",
+    "python" => "60%",
+    "C++" => "50%",
+    "C" => "40%"
+];
+
+$frameworks = [
+    "bootstrap" => "100%",
+    "JQuery" => "90%",
+    "AngularJS" => "75%",
+    "Laravel" => "70%",
+    "ReactJS" => "30%",
+];
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="codigo professional-experiences">
+                        <pre>
+                            <code class="python">
+print('ainda to escrevendo, calma ai ...')
+                            </code>
+                        </pre>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="js/index.js"></script>
 </body>
+
 </html>
