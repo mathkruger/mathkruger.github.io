@@ -1,4 +1,5 @@
 ---
+bg: arquivo.jpg
 layout: page
 permalink: /posts/
 title: "Arquivo"

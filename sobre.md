@@ -1,4 +1,5 @@
 ---
+bg: sobre.jpg
 layout: page
 title: "Sobre"
 crawlertitle: "Sobre"

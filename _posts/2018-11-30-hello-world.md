@@ -1,4 +1,5 @@
 ---
+bg: post-general.svg
 layout: post
 title:  "Hello World!"
 crawlertitle: "Hello World!"
