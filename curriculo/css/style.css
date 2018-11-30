@@ -121,3 +121,27 @@ body {
     display: inline-flex;
     width: 100%;
 }
+
+@media screen and (max-width: 1080px) {
+    #tela-principal {
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+    }
+
+    #tela-principal .corpo {
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    
+    #tela-principal .corpo .files {
+        width: auto;
+    }
+    
+    #tela-principal .corpo .conteudo header.tabs ul li {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
