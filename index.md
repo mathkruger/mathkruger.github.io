@@ -1,7 +1,7 @@
 ---
 layout: default
-crawlertitle: "Matheus Kruger Blog"
-title: "Matheus Kruger Blog"
+crawlertitle: "Dev Kruger Blog"
+title: "Dev Kruger Blog"
 summary: "Blog sobre desenvolvimento"
 ---
 
