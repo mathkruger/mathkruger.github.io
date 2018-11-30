@@ -19,4 +19,3 @@ Quer trocar uma ideia comigo? Chama nas minhas redes. Não sou muito ligado ness
 * <a href="https://www.instagram.com/mathkruger/" target="_blank">Instagram</a>
 
 Acho que é isso, vou tentar manter uma constancia nas postagens e espero que seja proveitoso pra quem ler.
-
