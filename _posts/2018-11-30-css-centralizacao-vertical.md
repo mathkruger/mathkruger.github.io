@@ -32,7 +32,7 @@ Se assim como o meu eu mais novo você deseja simplesmente centralizar uma caixa
 }
 {% endhighlight %}
 
-Nessa solução nós simplesmente tornarmos nosso elemento absoluto, ou seja, conseguimos mudar a posição dele através dos atributos top, left, right e bottom. Usando essas propriedades, "empurramos" o noso elemento para 50% do tamanho da tela. Se parássemos por ai, perceberíamos que o que está no centro são as bordas da esquerda e do topo do elemento e não o elemento em si. Por isso usamos a propriedade transform, que modifica alguns aspectos da forma do nosso elemento. a função translate, nessa ocasião, traz o nosso elemento para metade do seu tamanho tanto para esqueda quanto para cima, o que faz com que o elemento fique centralizado. 
+Nessa solução nós simplesmente tornarmos nosso elemento absoluto, ou seja, conseguimos mudar a posição dele através dos atributos top, left, right e bottom. Usando essas propriedades, "empurramos" o nosso elemento para 50% do tamanho da tela. Se parássemos por ai, perceberíamos que o que está no centro são as bordas da esquerda e do topo do elemento e não o elemento em si. Por isso usamos a propriedade transform, que modifica alguns aspectos da forma do nosso elemento. a função translate, nessa ocasião, traz o nosso elemento para metade do seu tamanho tanto para esqueda quanto para cima, o que faz com que o elemento fique centralizado. 
 
 ## Jeito 2: Flexbox
 
