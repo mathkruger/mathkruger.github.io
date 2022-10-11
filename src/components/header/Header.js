@@ -3,7 +3,7 @@ function Header() {
     <div className="terminal-nav">
         <div className="terminal-logo">
             <div className="logo terminal-prompt">
-                <a href="#" className="no-style">Matheus Kruger</a>
+                <a href="/" className="no-style">Matheus Kruger</a>
             </div>
         </div>
         <nav className="terminal-menu">
