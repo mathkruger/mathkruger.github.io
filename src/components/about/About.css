@@ -1,0 +1,12 @@
+.info-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.info-container .user-photo img {
+    width: 200px;
+    border-radius: 50%;
+    border: 3px solid;
+}

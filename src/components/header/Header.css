@@ -1,0 +1,6 @@
+#main-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    z-index: 500;
+}
