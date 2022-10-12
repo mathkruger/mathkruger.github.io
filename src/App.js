@@ -34,7 +34,7 @@ function App() {
           <hr />
           <Education />
           <hr />
-          <Experiences />
+          <Experiences /> 
         </>
       }
       
