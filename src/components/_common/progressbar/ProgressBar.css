@@ -1,0 +1,7 @@
+.custom-progress-bar p {
+    margin-bottom: 0px;
+}
+
+.custom-progress-bar .progress-bar {
+    margin-bottom: 24px;
+}

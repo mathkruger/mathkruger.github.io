@@ -1,8 +1,15 @@
+import "./Footer.css";
+
 function Footer() {
     return (
-        <footer>
-            <p>{new Date().getFullYear()} - Versão: 0.0.1</p>
-        </footer>
+        <>
+            <hr />
+            <footer>
+                <p>{new Date().getFullYear()} - Versão: 0.0.1</p>
+                <a href="/#">Topo</a>
+            </footer>
+            <hr />
+        </>
     )
 }
 

@@ -5,6 +5,7 @@ import About from "./components/about/About";
 import Experiences from "./components/experiences/Experiences";
 import Skills from "./components/skills/Skills";
 import Footer from "./components/footer/Footer";
+import Education from "./components/education/Education";
 
 function App() {
   const [ user, setUser ] = useState(undefined);
@@ -26,13 +27,14 @@ function App() {
       {
         !user ? <p>Carregando ...</p> :
         <>
-          <About user={user}></About>
+          <About user={user} />
 
           <hr />
-          <Skills></Skills>
+          <Skills />
           <hr />
-          <Experiences></Experiences>
+          <Education />
           <hr />
+          <Experiences />
         </>
       }
       

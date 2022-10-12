@@ -4,3 +4,29 @@
     background-color: var(--background-color);
     z-index: 500;
 }
+
+.toggle-button {
+    width: 5%;
+    height: 25px;
+    padding: 0;
+    font-size: 12px;
+    line-height: 12px;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 479px) {
+    #main-header {
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .terminal-menu {
+        display: none !important;
+    }
+
+    .toggle-button {
+        width: 25px;
+    }
+}

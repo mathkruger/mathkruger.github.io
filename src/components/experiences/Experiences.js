@@ -1,3 +1,5 @@
+import Card from "../_common/card/Card";
+import Title from "../_common/title/Title";
 import "./Experiences.css";
 
 function Experiences() {
@@ -7,42 +9,57 @@ function Experiences() {
             company: "CI&T",
             startDate: new Date(2021, 1),
             endDate: null,
-            description: `Trabalhando atualmente em um projeto internacional utilizando .NET e Angular como stack principal.`
+            description: `
+            Atuando com desenvolvimento WEB em um alguns clientes de áreas de atuação diversas.
+            Utiliza as tecnologias: Java Spring Boot e .NET para o backend e Angular 12 para o front`
         },
         {
             name: "Analista Desenvolvedor Pleno",
             company: "Datapar",
             startDate: new Date(2019, 5),
             endDate: new Date(2021, 1),
-            description: `Atuava no desenvolvimento de sistemas web utilizando .NET Core 3.1 e Angular 9.`
+            description: `
+            Atuando com desenvolvimento WEB de sistemas corporativos no ramo de logística.
+            Utiliza as tecnologias: .Net Core para o backend e Angular para o front. `
         },
         {
             name: "Desenvolvedor Fullstack",
             company: "Agência MKT Now",
             startDate: new Date(2017, 10),
             endDate: new Date(2019, 5),
-            description: `Desenvolvimento de layouts para e-commerce utilizando HTML5, CSS3 e JS. Desenvolvimento de aplicações WEB utilizando a framework PHP Laravel.`
+            description: `
+            Desenvolvimento de interfaces de e-commerce com alto desempenho,
+            usando técnicas front-end de desenvolvimento,dando preferência a linguagens puras, sem o uso de frameworks.
+            Manutenção de sites já existentes, como também inclusão de textos de SEO e metatags.`
         },
         {
             name: "Programador Front-End Júnior",
             company: "TopDeals - Negócios e Idéias",
             startDate: new Date(2017, 4),
             endDate: new Date(2017, 7),
-            description: `Desenvolvia layouts de e-commerce Vtex e landing pages, utilizando html + css + js`
+            description: `Desenvolvimento de interfaces de e-commerce com alta performance,
+            usando técnicas front-end de desenvolvimento, dando preferência a linguagens puras, sem o uso de frameworks.
+            Manutenção de sites já existentes, como também inclusão de textos de SEO e metatags.`
         },
         {
             name: "Estagiário de TI",
             company: "Softgreen",
             startDate: new Date(2016, 8),
             endDate: new Date(2017, 0),
-            description: `Desenvolvia layouts de sites e sistemas. Dava suporte interno e ao cliente também.`
+            description: `
+            Desenvolvimento de interfaces para sistemas na Web utilizando recursos como: HTML5, CSS3, Javascript, JQuery, Bootstrap, PHP, Java, etc.
+            Algumas vezes também prestando suporte técnico para clientes.`
         },
         {
             name: "Estagiário de laboratório",
             company: "LSJ Sistemas",
             startDate: new Date(2016, 0),
             endDate: new Date(2017, 8),
-            description: `Atuava como estagiário no laboratório de informática de uma escola de ensino fundamental 1 (crianças de 6 a 10 anos). Auxiliava os professores na preparação de ambiente e no desenvolvimento de aulas interativas (utilizando HTML, CSS e PHP).`
+            description: `
+            LJS é uma empresa terceirizada que presta serviços nas salas de informática das escolas municipais da cidade de Itu.
+            Trabalhava auxiliando na montagem de aulas de informática para crianças de 6 até 10 anos.
+            Também prestava serviços de manutenção de computadores.
+            `
         }
     ];
 
@@ -67,13 +84,12 @@ function Experiences() {
 
     return (
         <div id="experiences" className="experiences">
-            <h3>Experiências</h3>
+            <Title content="Experiências" />
 
             <div className="terminal-timeline">
                 {
                     workExperiences.map((x, i) => (
-                        <div key={i} className="terminal-card">
-                            <header>{x.name}</header>
+                        <Card key={i} title={x.name}>
                             <div>
                                 <ul>
                                     <li>
@@ -91,7 +107,7 @@ function Experiences() {
                                     {x.description}
                                 </p>
                             </div>
-                        </div>
+                        </Card>
                     ))
                 }
             </div>

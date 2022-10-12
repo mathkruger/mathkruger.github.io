@@ -1,44 +1,84 @@
-function Skills(props) {
-    const techSkills = [
-        {
-            name: "Angular",
-            percentage: 95
-        },
-        {
-            name: "React",
-            percentage: 80
-        },
-        {
-            name: "NodeJS",
-            percentage: 75
-        },
-        {
-            name: ".NET Core",
-            percentage: 60
-        },
-        {
-            name: "PHP",
-            percentage: 60
-        },
-        {
-            name: "Python",
-            percentage: 40
-        }
-    ];
+import ProgressBar from "../_common/progressbar/ProgressBar";
+import Title from "../_common/title/Title";
+import "./Skills.css";
+
+function SkillItem({ list }) {
 
     return (
-        <div id="skills" className="skills">
-            <h3>Skills</h3>
+        <>
             {
-                techSkills.map((x, i) => (
+                list.map((x, i) => (
                     <div key={i}>
-                        <p>{x.name}</p>
-                        <div className="progress-bar progress-bar-no-arrow">
-                            <div className="progress-bar-filled" style={{width: x.percentage + "%"}} data-filled="Loading 60%"></div>
-                        </div>
+                        <ProgressBar label={x.label} percentage={x.percentage} />
                     </div>
                 ))
             }
+        </>
+    )
+}
+
+function Skills() {
+    const techSkills = [
+        {
+            label: "Angular",
+            percentage: 95
+        },
+        {
+            label: "React",
+            percentage: 80
+        },
+        {
+            label: "NodeJS",
+            percentage: 75
+        },
+        {
+            label: ".NET Core",
+            percentage: 60
+        },
+        {
+            label: "PHP",
+            percentage: 60
+        },
+        {
+            label: "Python",
+            percentage: 40
+        }
+    ];
+    
+    const langSkills = [
+        {
+            label: "Português",
+            percentage: 100
+        },
+        {
+            label: "Inglês",
+            percentage: 98
+        },
+        {
+            label: "Espanhol",
+            percentage: 40
+        },
+        {
+            label: "Alemão",
+            percentage: 5
+        },
+    ];
+    
+    return (
+        <div id="skills" className="skills">
+            <Title content="Habilidades" />
+            
+            <div className="skills-container">
+                <div className="item">
+                    <h4>Tecnologias</h4>
+                    <SkillItem list={techSkills} />
+                </div>
+
+                <div className="item">
+                    <h4>Idiomas</h4>
+                    <SkillItem list={langSkills} />
+                </div>
+            </div>
         </div>
     )
 }

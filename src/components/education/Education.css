@@ -1,20 +1,18 @@
-.info-container {
+.education-container {
     display: flex;
-    gap: 40px;
     align-items: flex-start;
     justify-content: space-between;
+    gap: 40px;
 }
 
-.info-container .user-photo img {
-    width: 200px;
-    border-radius: 50%;
-    border: 3px solid;
+.education-container .item {
+    width: 100%;
 }
 
 @media screen and (max-width: 479px) {
-    .info-container {
+    .education-container {
         flex-direction: column;
-        gap: 20px;
         align-items: center;
+        gap: 20px;
     }
 }
