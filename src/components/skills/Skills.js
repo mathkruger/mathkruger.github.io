@@ -76,7 +76,7 @@ function Skills({ reposUrl }) {
     
     return (
         <div id="skills" className="skills">
-            <Title content="Habilidades" />
+            <Title content="Habilidades" /> 
             
             <div className="skills-container">
                 <div className="item">
