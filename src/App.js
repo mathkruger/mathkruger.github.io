@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Theme from "./components/_common/Theme";
 
+import * as fallbackUserData from "./user/mathkruger.json";
 import Header from "./components/header/Header";
 import About from "./components/about/About";
 import Experiences from "./components/experiences/Experiences";
@@ -12,9 +13,13 @@ function App() {
   const [ user, setUser ] = useState(undefined);
 
   const fetchUser = async () => {
-    const user = await fetch("https://api.github.com/users/mathkruger");
-    const userJson = await user.json();
-    setUser(userJson);
+    try {
+      const user = await fetch("https://api.github.com/users/mathkruger");
+      const userJson = await user.json();
+      setUser(userJson);
+    } catch (err) {
+      setUser(fallbackUserData);
+    }
   }
 
   useEffect(() => {
