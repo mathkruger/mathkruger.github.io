@@ -2,6 +2,8 @@ import ProgressBar from "../_common/progressbar/ProgressBar";
 import Title from "../_common/title/Title";
 import "./Skills.css";
 
+import * as skills from "../../data/skills.json";
+
 function SkillItem({ list }) {
 
     return (
@@ -18,61 +20,7 @@ function SkillItem({ list }) {
 }
 
 function Skills({ reposUrl }) {
-    const techSkills = [
-        {
-            label: "Angular",
-            percentage: 95,
-            icon: "angularjs-plain"
-        },
-        {
-            label: "React",
-            percentage: 80,
-            icon: "react-original"
-        },
-        {
-            label: "NodeJS",
-            percentage: 75,
-            icon: "nodejs-plain"
-        },
-        {
-            label: ".NET Core",
-            percentage: 60,
-            icon: "dotnetcore-plain"
-        },
-        {
-            label: "PHP",
-            percentage: 60,
-            icon: "php-plain"
-        },
-        {
-            label: "Python",
-            percentage: 40,
-            icon: "python-plain"
-        }
-    ];
-    
-    const langSkills = [
-        {
-            label: "Português",
-            percentage: 100,
-            icon: ""
-        },
-        {
-            label: "Inglês",
-            percentage: 98,
-            icon: ""
-        },
-        {
-            label: "Espanhol",
-            percentage: 40,
-            icon: ""
-        },
-        {
-            label: "Alemão",
-            percentage: 5,
-            icon: ""
-        },
-    ];
+    const { techSkills, langSkills } = skills;
     
     return (
         <div id="skills" className="skills">

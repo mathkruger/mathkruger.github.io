@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Theme from "./components/_common/Theme";
 
-import * as fallbackUserData from "./user/mathkruger.json";
+import * as fallbackUserData from "./data/fallbackUserData.json";
 import Header from "./components/header/Header";
 import About from "./components/about/About";
 import Experiences from "./components/experiences/Experiences";

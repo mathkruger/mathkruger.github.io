@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Engenheiro de Software",
+        "company": "CI&T",
+        "startDate": "2021-2-1",
+        "endDate": null,
+        "description": "Atuando com desenvolvimento WEB em um alguns clientes de áreas de atuação diversas. Utiliza as tecnologias: Java Spring Boot e .NET para o backend e Angular 12 para o front"
+    },
+    {
+        "name": "Analista Desenvolvedor Pleno",
+        "company": "Datapar",
+        "startDate": "2019-6-1",
+        "endDate": "2021-2-1",
+        "description": "Atuando com desenvolvimento WEB de sistemas corporativos no ramo de logística. Utiliza as tecnologias: .Net Core para o backend e Angular para o front."
+    },
+    {
+        "name": "Desenvolvedor Fullstack",
+        "company": "Agência MKT Now",
+        "startDate": "2017-11-1",
+        "endDate": "2019-6-1",
+        "description": "Desenvolvimento de interfaces de e-commerce com alto desempenho, usando técnicas front-end de desenvolvimento,dando preferência a linguagens puras, sem o uso de frameworks. Manutenção de sites já existentes, como também inclusão de textos de SEO e metatags."
+    },
+    {
+        "name": "Programador Front-End Júnior",
+        "company": "TopDeals - Negócios e Idéias",
+        "startDate": "2017-5-1",
+        "endDate": "2017-8-1",
+        "description": "Desenvolvimento de interfaces de e-commerce com alta performance, usando técnicas front-end de desenvolvimento, dando preferência a linguagens puras, sem o uso de frameworks. Manutenção de sites já existentes, como também inclusão de textos de SEO e metatags."
+    },
+    {
+        "name": "Estagiário de TI",
+        "company": "Softgreen",
+        "startDate": "2016-9-1",
+        "endDate": "2017-1-1",
+        "description": "Desenvolvimento de interfaces para sistemas na Web utilizando recursos como: HTML5, CSS3, Javascript, JQuery, Bootstrap, PHP, Java, etc. Algumas vezes também prestando suporte técnico para clientes."
+    },
+    {
+        "name": "Estagiário de laboratório",
+        "company": "LSJ Sistemas",
+        "startDate": "2016-1-1",
+        "endDate": "2017-9-1",
+        "description": "LJS é uma empresa terceirizada que presta serviços nas salas de informática das escolas municipais da cidade de Itu. Trabalhava auxiliando na montagem de aulas de informática para crianças de 6 até 10 anos. Também prestava serviços de manutenção de computadores."
+    }
+]

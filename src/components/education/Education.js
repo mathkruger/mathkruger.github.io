@@ -1,38 +1,13 @@
 import Card from "../_common/card/Card";
 import Title from "../_common/title/Title";
 
+import * as education from "../../data/education.json";
+
 import "./Education.css";
 
 function Education() {
-    const education = [
-        {
-            institution: 'Fatec Itu "Dom Amaury Castanho"',
-            startYear: 2015,
-            endYear: 2017,
-            course: "Tecnologia em Análise e Desenvolvimento de Sistemas"
-        },
-        {
-            institution: 'E.E. Prof. Cícero Siqueira Campos',
-            startYear: 2012,
-            endYear: 2014,
-            course: "Ensino Médio"
-        }
-    ];
 
-    const courses = [
-        {
-            title: "Criando seu Primeiro App com Flutter | Balta.io",
-            duration: "2 horas"
-        },
-        {
-            title: "Criando APIs com ASP.NET Core e EF Core | Balta.io",
-            duration: "3.6 horas"
-        },
-        {
-            title: "Flutter Apps: Álcool ou Gasolina | Balta.io",
-            duration: "3.6 horas"
-        }
-    ];
+    const { formalEducation, courses } = education;
 
     return (
         <div id="education" className="education">
@@ -42,7 +17,7 @@ function Education() {
                 <div className="item">
                     <h4>Educação formal</h4>
                     {
-                        education.map((x, i) => (
+                        formalEducation.map((x, i) => (
                             <div key={i} style={{margin: 10 + "px"}}>
                                 <Card title={x.institution}>
                                     <div>

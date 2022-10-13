@@ -7,7 +7,10 @@ export const ThemeContext = React.createContext({
 });
 
 export default function ThemeProvider({ children }) {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = 
+    window.localStorage.getItem("darkMode") ?
+    JSON.parse(window.localStorage.getItem("darkMode")) :
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
 
     const [dark, setDark] = useState(prefersDark);
 
@@ -18,6 +21,7 @@ export default function ThemeProvider({ children }) {
     }, [dark]);
 
     const toggle = () => {
+        window.localStorage.setItem("darkMode", JSON.stringify(!dark));
         setDark(!dark);
     };
 
