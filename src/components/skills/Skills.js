@@ -2,7 +2,7 @@ import ProgressBar from "../_common/progressbar/ProgressBar";
 import Title from "../_common/title/Title";
 import "./Skills.css";
 
-import * as skills from "../../data/skills.json";
+import skills from "../../data/skills.json";
 
 function SkillItem({ list }) {
 

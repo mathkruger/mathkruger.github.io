@@ -2,13 +2,10 @@ import Card from "../_common/card/Card";
 import Title from "../_common/title/Title";
 import "./Experiences.css";
 
-import * as exp from "../../data/experiences.json";
+import experiences from "../../data/experiences.json";
 import getMonthName from "../_common/getMonthName";
 
 function Experiences() {
-
-    const experiences = Array.from(exp);
-
     return (
         <div id="experiences" className="experiences">
             <Title content="Experiências" />

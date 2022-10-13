@@ -1,7 +1,7 @@
 import Card from "../_common/card/Card";
 import Title from "../_common/title/Title";
 
-import * as education from "../../data/education.json";
+import education from "../../data/education.json";
 
 import "./Education.css";
 
