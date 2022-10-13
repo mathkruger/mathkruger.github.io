@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Theme from "./components/_common/Theme";
 
 import Header from "./components/header/Header";
 import About from "./components/about/About";
@@ -21,25 +22,27 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
-      <Header></Header>
-      
-      {
-        !user ? <p>Carregando ...</p> :
-        <>
-          <About user={user} />
+    <Theme>
+      <div className="container">
+        <Header></Header>
+        
+        {
+          !user ? <p>Carregando ...</p> :
+          <>
+            <About user={user} />
 
-          <hr />
-          <Skills />
-          <hr />
-          <Education />
-          <hr />
-          <Experiences /> 
-        </>
-      }
-      
-      <Footer></Footer>
-    </div>
+            <hr />
+            <Skills reposUrl={user.html_url + "?tab=repositories"} />
+            <hr />
+            <Education />
+            <hr />
+            <Experiences /> 
+          </>
+        }
+        
+        <Footer></Footer>
+      </div>
+    </Theme>
   );
 }
 

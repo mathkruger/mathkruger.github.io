@@ -43,8 +43,8 @@ function Education() {
                     <h4>Educação formal</h4>
                     {
                         education.map((x, i) => (
-                            <div style={{margin: 10 + "px"}}>
-                                <Card key={i} title={x.institution}>
+                            <div key={i} style={{margin: 10 + "px"}}>
+                                <Card title={x.institution}>
                                     <div>
                                         <ul>
                                             <li>{x.course}</li>

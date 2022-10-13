@@ -18,7 +18,7 @@ function About(props) {
                     </p>
 
                     <ul>
-                        <li><a rel="noreferrer" target="_blank" href="https://github.com/mathkruger">Github</a></li>
+                        <li><a rel="noreferrer" target="_blank" href={props.user.html_url}>Github</a></li>
                         <li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/mathkruger/">Linkedin</a></li>
                         <li><a rel="noreferrer" target="_blank" href="mailto:ms-kruger@hotmail.com">E-mail</a></li>
                         <li><a rel="noreferrer" target="_blank" href="https://wa.me/5511959472884">Whatsapp</a></li>

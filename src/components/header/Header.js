@@ -1,20 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { ThemeContext } from "../_common/Theme";
 import "./Header.css";
 
 function Header() {
 
-    const [ isDark, setIsDark ] = useState(true);
-
-    const toggleDarkMode = () => {
-        document.body.classList.toggle("dark");
-
-        if (isDark) {
-            setIsDark(false);
-        }
-        else {
-            setIsDark(true);
-        }
-    };
+    const { dark, toggle } = useContext(ThemeContext);
 
     return (
         <div id="main-header" className="terminal-nav">
@@ -31,8 +21,8 @@ function Header() {
                     <li><a className="menu-item" href="/#experiences">Experiências</a></li>
                 </ul>
             </nav>
-            <button onClick={toggleDarkMode} className="toggle-button btn btn-default btn-ghost">
-                { isDark ? "☀️" : "🌙" }
+            <button onClick={toggle} className="toggle-button btn btn-default btn-ghost">
+                { dark ? "☀️" : "🌙" }
             </button>
         </div>
     )

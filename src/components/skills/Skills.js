@@ -9,7 +9,7 @@ function SkillItem({ list }) {
             {
                 list.map((x, i) => (
                     <div key={i}>
-                        <ProgressBar label={x.label} percentage={x.percentage} />
+                        <ProgressBar {...x} />
                     </div>
                 ))
             }
@@ -17,50 +17,60 @@ function SkillItem({ list }) {
     )
 }
 
-function Skills() {
+function Skills({ reposUrl }) {
     const techSkills = [
         {
             label: "Angular",
-            percentage: 95
+            percentage: 95,
+            icon: "angularjs-plain"
         },
         {
             label: "React",
-            percentage: 80
+            percentage: 80,
+            icon: "react-original"
         },
         {
             label: "NodeJS",
-            percentage: 75
+            percentage: 75,
+            icon: "nodejs-plain"
         },
         {
             label: ".NET Core",
-            percentage: 60
+            percentage: 60,
+            icon: "dotnetcore-plain"
         },
         {
             label: "PHP",
-            percentage: 60
+            percentage: 60,
+            icon: "php-plain"
         },
         {
             label: "Python",
-            percentage: 40
+            percentage: 40,
+            icon: "python-plain"
         }
     ];
     
     const langSkills = [
         {
             label: "Português",
-            percentage: 100
+            percentage: 100,
+            icon: ""
         },
         {
             label: "Inglês",
-            percentage: 98
+            percentage: 98,
+            icon: ""
         },
         {
             label: "Espanhol",
-            percentage: 40
+            percentage: 40,
+            icon: ""
         },
         {
             label: "Alemão",
-            percentage: 5
+            percentage: 5,
+            icon: ""
         },
     ];
     
@@ -72,6 +82,10 @@ function Skills() {
                 <div className="item">
                     <h4>Tecnologias</h4>
                     <SkillItem list={techSkills} />
+
+                    <div className="btn-container">
+                        <a rel="noreferrer" target="_blank" href={reposUrl} className="btn btn-primary btn-ghost">Projetos</a>
+                    </div>
                 </div>
 
                 <div className="item">

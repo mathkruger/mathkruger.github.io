@@ -1,5 +1,11 @@
 .custom-progress-bar p {
     margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-progress-bar p i {
+    margin-right: 5px;
 }
 
 .custom-progress-bar .progress-bar {
