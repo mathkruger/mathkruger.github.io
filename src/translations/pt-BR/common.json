@@ -1,0 +1,34 @@
+{
+    "header": {
+        "menu": {
+            "about": "Sobre",
+            "skills": "Habilidades",
+            "education": "Formação",
+            "experiences": "Experiências"
+        }
+    },
+    "about": {
+        "title": "Sobre mim",
+        "description": "Olá! Me chamo Matheus, sou desenvolvedor fullstack há 6 anos, mas gosto de brincar com tecnologia desde muito cedo. Amo aprender coisas novas e fazer alguns projetos por diversão. Quer falar comigo? Entre em contato!"
+    },
+    "skills": {
+        "title": "Habilidades",
+        "techSkillsTitle": "Tecnologias",
+        "LangSkillsTitle": "Idiomas",
+        "projetcsButton": "Projetos"
+    },
+    "education": {
+        "title": "Formação",
+        "formalTitle": "Educação formal",
+        "coursesTitle": "Cursos",
+        "hour": "horas"
+    },
+    "experiences": {
+        "title": "Experiências",
+        "current": "Atualmente"
+    },
+    "footer": {
+        "version": "Versão",
+        "top": "Topo"
+    }
+}

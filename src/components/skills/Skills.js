@@ -3,6 +3,7 @@ import Title from "../_common/title/Title";
 import "./Skills.css";
 
 import skills from "../../data/skills.json";
+import { useTranslation } from "react-i18next";
 
 function SkillItem({ list }) {
 
@@ -21,24 +22,27 @@ function SkillItem({ list }) {
 
 function Skills({ reposUrl }) {
     const { techSkills, langSkills } = skills;
+    const { t, i18n } = useTranslation("common");
     
     return (
         <div id="skills" className="skills">
-            <Title content="Habilidades" /> 
+            <Title content={t("skills.title")} /> 
             
             <div className="skills-container">
                 <div className="item">
-                    <h4>Tecnologias</h4>
+                    <h4>{t("skills.techSkillsTitle")}</h4>
                     <SkillItem list={techSkills} />
 
                     <div className="btn-container">
-                        <a rel="noreferrer" target="_blank" href={reposUrl} className="btn btn-primary btn-ghost">Projetos</a>
+                        <a rel="noreferrer" target="_blank" href={reposUrl} className="btn btn-primary btn-ghost">
+                            {t("skills.projetcsButton")}
+                        </a>
                     </div>
                 </div>
 
                 <div className="item">
-                    <h4>Idiomas</h4>
-                    <SkillItem list={langSkills} />
+                    <h4>{t("skills.LangSkillsTitle")}</h4>
+                    <SkillItem list={langSkills[i18n.language]} />
                 </div>
             </div>
         </div>

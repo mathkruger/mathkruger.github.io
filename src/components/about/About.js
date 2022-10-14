@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import "./About.css";
 
 function About(props) {
+
+    const { t } = useTranslation("common");
 
     return (
         <div id="about" className="about">
@@ -10,11 +13,9 @@ function About(props) {
                     <figcaption>{props.user.login}</figcaption>
                 </figure>
                 <div className="user-info">
-                    <h2>Sobre mim</h2>
+                    <h2>{t("about.title")}</h2>
                     <p>
-                        Olá! Me chamo Matheus, sou desenvolvedor fullstack há 6 anos, mas gosto de brincar
-                        com tecnologia desde muito cedo. Amo aprender coisas novas e fazer alguns projetos
-                        por diversão. Quer falar comigo? Entre em contato!
+                        {t("about.description")}
                     </p>
 
                     <ul>

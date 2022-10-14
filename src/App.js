@@ -28,9 +28,9 @@ function App() {
 
   return (
     <Theme>
-      <div className="container">
-        <Header></Header>
-        
+      <Header></Header>
+      
+      <div className="container">  
         {
           !user ? <p>Carregando ...</p> :
           <>
@@ -47,6 +47,7 @@ function App() {
         
         <Footer></Footer>
       </div>
+      
     </Theme>
   );
 }

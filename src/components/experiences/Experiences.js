@@ -4,15 +4,19 @@ import "./Experiences.css";
 
 import experiences from "../../data/experiences.json";
 import getMonthName from "../_common/getMonthName";
+import { useTranslation } from "react-i18next";
 
 function Experiences() {
+    
+    const { t, i18n } = useTranslation("common");
+
     return (
         <div id="experiences" className="experiences">
-            <Title content="Experiências" />
+            <Title content={t("experiences.title")} />
 
             <div className="terminal-timeline">
                 {
-                    experiences.map((x, i) => (
+                    experiences[i18n.language].map((x, i) => (
                         <Card key={i} title={x.name}>
                             <div>
                                 <ul>
@@ -20,10 +24,10 @@ function Experiences() {
                                         <strong>{x.company}</strong>
                                     </li>
                                     <li>
-                                        {getMonthName(new Date(x.startDate).getMonth())}/{new Date(x.startDate).getFullYear()} -
+                                        {getMonthName(new Date(x.startDate).getMonth(), i18n.language)}/{new Date(x.startDate).getFullYear()} -
                                         {
-                                            x.endDate ? " " + getMonthName(new Date(x.endDate).getMonth()) + "/" + new Date(x.endDate).getFullYear() :
-                                                " Atualmente"
+                                            x.endDate ? " " + getMonthName(new Date(x.endDate).getMonth(), i18n.language) + "/" + new Date(x.endDate).getFullYear() :
+                                                " " + t("experiences.current")
                                         }
                                     </li>
                                 </ul>

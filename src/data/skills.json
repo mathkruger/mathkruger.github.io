@@ -31,26 +31,50 @@
             "icon": "python-plain"
         }
     ],
-    "langSkills": [
-        {
-            "label": "Português",
-            "percentage": 100,
-            "icon": ""
-        },
-        {
-            "label": "Inglês",
-            "percentage": 98,
-            "icon": ""
-        },
-        {
-            "label": "Espanhol",
-            "percentage": 40,
-            "icon": ""
-        },
-        {
-            "label": "Alemão",
-            "percentage": 5,
-            "icon": ""
-        }
-    ]
+    "langSkills": {
+        "pt-BR": [
+            {
+                "label": "Português",
+                "percentage": 100,
+                "icon": ""
+            },
+            {
+                "label": "Inglês",
+                "percentage": 98,
+                "icon": ""
+            },
+            {
+                "label": "Espanhol",
+                "percentage": 40,
+                "icon": ""
+            },
+            {
+                "label": "Alemão",
+                "percentage": 5,
+                "icon": ""
+            }
+        ],
+        "en": [
+            {
+                "label": "Portuguese",
+                "percentage": 100,
+                "icon": ""
+            },
+            {
+                "label": "English",
+                "percentage": 98,
+                "icon": ""
+            },
+            {
+                "label": "Spanish",
+                "percentage": 40,
+                "icon": ""
+            },
+            {
+                "label": "German",
+                "percentage": 5,
+                "icon": ""
+            }
+        ]
+    }
 }

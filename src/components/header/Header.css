@@ -3,27 +3,43 @@
     top: 0;
     background-color: var(--background-color);
     z-index: 500;
+    max-width: var(--page-width);
+    padding: 0 calc(var(--global-space) * 2);
+    margin: 0 auto;
+}
+
+.btn-group {
+    width: 100px;
+    margin-left: 10px;
 }
 
 .toggle-button {
-    width: 5%;
+    width: 25px;
     height: 25px;
     padding: 0;
     font-size: 12px;
     line-height: 12px;
-    margin-left: 10px;
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 666px) {
     #main-header {
-        position: relative;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        border-bottom: 1px solid var(--secondary-color);
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        padding: 10px 0;
     }
 
     .terminal-menu {
         display: none !important;
+    }
+
+    .btn-group {
+        width: auto;
     }
 
     .toggle-button {

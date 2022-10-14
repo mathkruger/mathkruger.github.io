@@ -5,19 +5,22 @@ import education from "../../data/education.json";
 
 import "./Education.css";
 
+import {useTranslation} from "react-i18next";
+
 function Education() {
 
     const { formalEducation, courses } = education;
+    const {t, i18n} = useTranslation("common");
 
     return (
         <div id="education" className="education">
-            <Title content="Formação" />
-            
+            <Title content={t("education.title")} />
+
             <div className="education-container">
                 <div className="item">
-                    <h4>Educação formal</h4>
+                    <h4>{t("education.formalTitle")}</h4>
                     {
-                        formalEducation.map((x, i) => (
+                        formalEducation[i18n.language].map((x, i) => (
                             <div key={i} style={{margin: 10 + "px"}}>
                                 <Card title={x.institution}>
                                     <div>
@@ -33,11 +36,11 @@ function Education() {
                 </div>
 
                 <div className="item">
-                    <h4>Cursos</h4>
+                    <h4>{t("education.coursesTitle")}</h4>
                     <ul>
                         {
-                            courses.map((x, i) => (
-                                <li key={i}><strong>{x.title}</strong> - {x.duration}</li>
+                            courses[i18n.language].map((x, i) => (
+                                <li key={i}><strong>{x.title}</strong> - {x.duration} {t("education.hour")}</li>
                             ))
                         }
                     </ul>
