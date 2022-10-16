@@ -8,9 +8,11 @@ import Experiences from "./components/experiences/Experiences";
 import Skills from "./components/skills/Skills";
 import Footer from "./components/footer/Footer";
 import Education from "./components/education/Education";
+import { useTranslation } from "react-i18next";
 
 function App() {
   const [ user, setUser ] = useState(undefined);
+  const { t } = useTranslation("common");
 
   const fetchUser = async () => {
     try {
@@ -32,7 +34,7 @@ function App() {
       
       <div className="container">  
         {
-          !user ? <p>Carregando ...</p> :
+          !user ? <p>{t("loadingText")}</p> :
           <>
             <About user={user} />
 
