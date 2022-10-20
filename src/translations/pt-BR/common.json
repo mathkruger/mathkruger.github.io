@@ -15,8 +15,11 @@
     "skills": {
         "title": "Habilidades",
         "techSkillsTitle": "Tecnologias",
-        "LangSkillsTitle": "Idiomas",
-        "projetcsButton": "Projetos"
+        "LangSkillsTitle": "Idiomas"
+    },
+    "projects": {
+        "title": "Projetos",
+        "moreProjectsButton": "More projects"
     },
     "education": {
         "title": "Formação",

@@ -20,7 +20,7 @@ function SkillItem({ list }) {
     )
 }
 
-function Skills({ reposUrl }) {
+function Skills() {
     const { techSkills, langSkills } = skills;
     const { t, i18n } = useTranslation("common");
     
@@ -32,12 +32,6 @@ function Skills({ reposUrl }) {
                 <div className="item">
                     <h4>{t("skills.techSkillsTitle")}</h4>
                     <SkillItem list={techSkills} />
-
-                    <div className="btn-container">
-                        <a rel="noreferrer" target="_blank" href={reposUrl} className="btn btn-primary btn-ghost">
-                            {t("skills.projetcsButton")}
-                        </a>
-                    </div>
                 </div>
 
                 <div className="item">

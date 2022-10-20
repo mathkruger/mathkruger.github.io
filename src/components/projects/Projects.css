@@ -1,0 +1,15 @@
+.btn-container {
+    text-align: center;
+}
+
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+.projects-container .item {
+    width: calc(33.3333% - 10px);
+}
