@@ -4,6 +4,7 @@
         "menu": {
             "about": "About",
             "skills": "Skills",
+            "projects": "Projects",
             "education": "Education",
             "experiences": "Experiences"
         }
