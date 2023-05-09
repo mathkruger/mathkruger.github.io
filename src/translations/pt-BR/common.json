@@ -4,6 +4,7 @@
         "menu": {
             "about": "Sobre",
             "skills": "Habilidades",
+            "projects": "Projetos",
             "education": "Formação",
             "experiences": "Experiências"
         }
@@ -15,8 +16,11 @@
     "skills": {
         "title": "Habilidades",
         "techSkillsTitle": "Tecnologias",
-        "LangSkillsTitle": "Idiomas",
-        "projetcsButton": "Projetos"
+        "LangSkillsTitle": "Idiomas"
+    },
+    "projects": {
+        "title": "Projetos",
+        "moreProjectsButton": "Mais Projetos"
     },
     "education": {
         "title": "Formação",

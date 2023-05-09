@@ -4,6 +4,7 @@
         "menu": {
             "about": "About",
             "skills": "Skills",
+            "projects": "Projects",
             "education": "Education",
             "experiences": "Experiences"
         }
@@ -15,8 +16,11 @@
     "skills": {
         "title": "Skills",
         "techSkillsTitle": "Tech",
-        "LangSkillsTitle": "Languages",
-        "projetcsButton": "Projects"
+        "LangSkillsTitle": "Languages"
+    },
+    "projects": {
+        "title": "Projects",
+        "moreProjectsButton": "More projects"
     },
     "education": {
         "title": "Education",

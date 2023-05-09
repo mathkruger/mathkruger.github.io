@@ -1,0 +1,52 @@
+{
+    "en": [
+        {
+            "name": "Litefy",
+            "description": "A lightweight spotify client for low-end devices",
+            "repoUrl": "https://github.com/mathkruger/litefy", 
+            "url": "https://matheuskrugerdev.cf/litefy"
+        },
+        {
+            "name": "REGP CPU Emulator",
+            "description": "A fantasy computer emulator, to study how to implement CPU emulators in javascript.",
+            "repoUrl": "https://github.com/mathkruger/regp-cpu-emulator",
+            "url": "https://matheuskrugerdev.cf/regp-cpu-emulator"
+        },
+        {
+            "name": "RPS Idle Game",
+            "description": "A Rock-Paper-Scissors IDLE game",
+            "repoUrl": "https://github.com/mathkruger/rps-idle",
+            "url": "https://matheuskrugerdev.cf/rps-idle"
+        },
+        {
+            "name": "TT Rust",
+            "description": "A simple time tracker written in rust",
+            "repoUrl": "https://github.com/mathkruger/tt-rust"
+        }
+    ],
+    "pt-BR": [
+        {
+            "name": "Litefy",
+            "description": "Um cliente de Spotify leve para dispositivos mais modestos.",
+            "repoUrl": "https://github.com/mathkruger/litefy", 
+            "url": "https://matheuskrugerdev.cf/litefy"
+        },
+        {
+            "name": "REGP CPU Emulator",
+            "description": "Um emulador de um computador inventado, para aprender sobre construção de emuladores em javascript.",
+            "repoUrl": "https://github.com/mathkruger/regp-cpu-emulator",
+            "url": "https://matheuskrugerdev.cf/regp-cpu-emulator"
+        },
+        {
+            "name": "RPS Idle Game",
+            "description": "Um jogo Idle de Pedra-Papel-Tesoura",
+            "repoUrl": "https://github.com/mathkruger/rps-idle",
+            "url": "https://matheuskrugerdev.cf/rps-idle"
+        },
+        {
+            "name": "TT Rust",
+            "description": "Um time tracker simples escrito em Rust",
+            "repoUrl": "https://github.com/mathkruger/tt-rust"
+        }
+    ]
+}

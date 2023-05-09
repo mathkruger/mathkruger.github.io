@@ -9,6 +9,7 @@ import Skills from "./components/skills/Skills";
 import Footer from "./components/footer/Footer";
 import Education from "./components/education/Education";
 import { useTranslation } from "react-i18next";
+import Projects from "./components/projects/Projects";
 
 function App() {
   const [ user, setUser ] = useState(undefined);
@@ -39,7 +40,9 @@ function App() {
             <About user={user} />
 
             <hr />
-            <Skills reposUrl={user.html_url + "?tab=repositories"} />
+            <Skills />
+            <hr />
+            <Projects reposUrl={user.html_url + "?tab=repositories"} />
             <hr />
             <Education />
             <hr />

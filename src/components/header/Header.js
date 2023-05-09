@@ -20,6 +20,7 @@ function Header() {
                 <ul>
                     <li><a className="menu-item" href="/#about">{t("header.menu.about")}</a></li>
                     <li><a className="menu-item" href="/#skills">{t("header.menu.skills")}</a></li>
+                    <li><a className="menu-item" href="/#projects">{t("header.menu.projects")}</a></li>
                     <li><a className="menu-item" href="/#education">{t("header.menu.education")}</a></li>
                     <li><a className="menu-item" href="/#experiences">{t("header.menu.experiences")}</a></li>
                 </ul>
