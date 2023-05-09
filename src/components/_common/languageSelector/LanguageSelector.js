@@ -1,12 +1,14 @@
 import { useTranslation } from "react-i18next";
+import us from "../../../images/us.png";
+import br from "../../../images/br.png";
 
 function LanguageSelector() {
 
     const { i18n } = useTranslation("common");
 
     const flagsToShow = {
-        "pt-BR": "https://countryflagsapi.com/png/us",
-        "en": "https://countryflagsapi.com/png/br"
+        "pt-BR": us,
+        "en": br
     };
 
     const changeLanguage = () => {
