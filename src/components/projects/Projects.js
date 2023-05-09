@@ -1,52 +1,39 @@
 import { useTranslation } from "react-i18next";
 import Title from "../_common/title/Title";
 import Card from "../_common/card/Card";
+import projects from "../../data/projects.json";
 
 import "./Projects.css";
 
 function Projects({ reposUrl }) {
-    const { t } = useTranslation("common");
+    const { t, i18n } = useTranslation("common");
 
     return (
         <div id="projects" className="projects">
             <Title content={t("projects.title")} /> 
             
             <div className="projects-container">
-                <div className="item">
-                    <Card title="Projeto 1">
-                        <p>Que projetaço hein!</p>
-                    </Card>
-                </div>
-
-                <div className="item">
-                    <Card title="Projeto 1">
-                        <p>Que projetaço hein!</p>
-                    </Card>
-                </div>
-
-                <div className="item">
-                    <Card title="Projeto 1">
-                        <p>Que projetaço hein!</p>
-                    </Card>
-                </div>
-
-                <div className="item">
-                    <Card title="Projeto 1">
-                        <p>Que projetaço hein!</p>
-                    </Card>
-                </div>
-
-                <div className="item">
-                    <Card title="Projeto 1">
-                        <p>Que projetaço hein!</p>
-                    </Card>
-                </div>
-
-                <div className="item">
-                    <Card title="Projeto 1">
-                        <p>Que projetaço hein!</p>
-                    </Card>
-                </div>
+                {
+                    projects[i18n.language].map((x, i) => (
+                        <div key={i} className="item">
+                            <Card title={x.name}>
+                                <ul className="project-content">
+                                    <li className="description">{x.description}</li>
+                                    <li>
+                                        <a target="_blank" rel="noreferrer" href={x.repoUrl}>Repo</a>
+                                    </li>
+                                    {
+                                        x.url && (
+                                            <li>
+                                                <a target="_blank" rel="noreferrer" href={x.url}>Website</a>
+                                            </li>
+                                        )
+                                    }
+                                </ul>
+                            </Card>
+                        </div>
+                    ))
+                }
             </div>
 
             <div className="btn-container">

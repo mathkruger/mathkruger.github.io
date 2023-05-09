@@ -10,6 +10,21 @@
     gap: 10px;
     margin-bottom: 1rem;
 }
+
 .projects-container .item {
-    width: calc(33.3333% - 10px);
+    width: calc(50% - 10px);
+}
+
+.projects-container .item .terminal-card {
+    height: 100%;
+}
+
+.projects-container .item .project-content {
+    padding: 1rem;
+}
+
+@media screen and (max-width: 666px) {
+    .projects-container .item {
+        width: 100%;
+    }
 }
