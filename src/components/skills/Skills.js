@@ -1,8 +1,8 @@
+import useData from "../../hooks/useData";
 import ProgressBar from "../_common/progressbar/ProgressBar";
 import Title from "../_common/title/Title";
 import "./Skills.css";
 
-import skills from "../../data/skills.json";
 import { useTranslation } from "react-i18next";
 
 function SkillItem({ list }) {
@@ -21,8 +21,9 @@ function SkillItem({ list }) {
 }
 
 function Skills() {
-    const { techSkills, langSkills } = skills;
     const { t, i18n } = useTranslation("common");
+    const { data: techSkills } = useData("techSkills", null);
+    const { data: langSkills } = useData("langSkills", i18n.language);
     
     return (
         <div id="skills" className="skills">
@@ -36,7 +37,7 @@ function Skills() {
 
                 <div className="item">
                     <h4>{t("skills.LangSkillsTitle")}</h4>
-                    <SkillItem list={langSkills[i18n.language]} />
+                    <SkillItem list={langSkills} />
                 </div>
             </div>
         </div>
