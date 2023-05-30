@@ -1,16 +1,14 @@
 import Card from "../_common/card/Card";
 import Title from "../_common/title/Title";
-
-import education from "../../data/education.json";
-
 import "./Education.css";
 
 import {useTranslation} from "react-i18next";
+import useData from "../../hooks/useData";
 
 function Education() {
-
-    const { formalEducation, courses } = education;
     const {t, i18n} = useTranslation("common");
+    const { data: formalEducation } = useData("formalEducation", i18n.language);
+    const { data: courses } = useData("courses", i18n.language);
 
     return (
         <div id="education" className="education">
@@ -20,7 +18,7 @@ function Education() {
                 <div className="item">
                     <h4>{t("education.formalTitle")}</h4>
                     {
-                        formalEducation[i18n.language].map((x, i) => (
+                        formalEducation.map((x, i) => (
                             <div key={i} style={{margin: 10 + "px"}}>
                                 <Card title={x.institution}>
                                     <div>
@@ -39,7 +37,7 @@ function Education() {
                     <h4>{t("education.coursesTitle")}</h4>
                     <ul>
                         {
-                            courses[i18n.language].map((x, i) => (
+                            courses.map((x, i) => (
                                 <li key={i}><strong>{x.title}</strong> - {x.duration} {t("education.hour")}</li>
                             ))
                         }

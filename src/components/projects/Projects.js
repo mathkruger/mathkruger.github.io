@@ -1,12 +1,15 @@
 import { useTranslation } from "react-i18next";
 import Title from "../_common/title/Title";
 import Card from "../_common/card/Card";
-import projects from "../../data/projects.json";
 
 import "./Projects.css";
+import useUser from "../../hooks/useUser";
+import useData from "../../hooks/useData";
 
-function Projects({ reposUrl }) {
+function Projects() {
     const { t, i18n } = useTranslation("common");
+    const { user } = useUser();
+    const { data: projects } = useData("projects", i18n.language);
 
     return (
         <div id="projects" className="projects">
@@ -14,7 +17,7 @@ function Projects({ reposUrl }) {
             
             <div className="projects-container">
                 {
-                    projects[i18n.language].map((x, i) => (
+                    projects.map((x, i) => (
                         <div key={i} className="item">
                             <Card title={x.name}>
                                 <ul className="project-content">
@@ -37,7 +40,7 @@ function Projects({ reposUrl }) {
             </div>
 
             <div className="btn-container">
-                <a rel="noreferrer" target="_blank" href={reposUrl} className="btn btn-primary btn-ghost">
+                <a rel="noreferrer" target="_blank" href={user?.html_url + "?tab=repositories"} className="btn btn-primary btn-ghost">
                     {t("projects.moreProjectsButton")}
                 </a>
             </div>
