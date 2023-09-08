@@ -9,6 +9,17 @@ function Experiences() {
     const { t, i18n } = useTranslation("common");
     const { data: experiences } = useData("experiences", i18n.language);
 
+    const getDate = (date) => {
+        const dateParts = date.split('-');
+        const year = dateParts[0];
+        const month = dateParts[1];
+        const day = dateParts[2];
+
+        console.log(dateParts);
+
+        return new Date(year, month, day);
+    }
+
     return (
         <div id="experiences" className="experiences">
             <Title content={t("experiences.title")} />
@@ -23,9 +34,9 @@ function Experiences() {
                                         <strong>{x.company}</strong>
                                     </li>
                                     <li>
-                                        { getMonthName(new Date(x.startDate).getMonth(), i18n.language) }/{ new Date(x.startDate).getFullYear() } -
+                                        { getMonthName(getDate(x.startDate).getMonth(), i18n.language) }/{ getDate(x.startDate).getFullYear() } -
                                         {
-                                            x.endDate ? " " + getMonthName(new Date(x.endDate).getMonth(), i18n.language) + "/" + new Date(x.endDate).getFullYear() :
+                                            x.endDate ? " " + getMonthName(getDate(x.endDate).getMonth(), i18n.language) + "/" + getDate(x.endDate).getFullYear() :
                                                 " " + t("experiences.current")
                                         }
                                     </li>
