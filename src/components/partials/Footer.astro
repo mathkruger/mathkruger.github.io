@@ -14,3 +14,22 @@ const t = useTranslations(lang);
   </a>
 </footer>
 <hr />
+
+<style>
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 666px){
+    footer {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+</style>
