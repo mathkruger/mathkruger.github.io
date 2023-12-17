@@ -8,43 +8,41 @@ const t = useTranslations(lang);
 const user = await fetchGithubData();
 ---
 
-<div id="about" class="about">
-  <div class="info-container">
-    <figure class="user-photo">
-      <img alt={user.login} src={user.avatar_url} />
-      <figcaption>{user.login}</figcaption>
-    </figure>
-    <div class="user-info">
-      <h2>{t("about.title")}</h2>
-      <p>
-        {t("about.description")}
-      </p>
+<div class="info-container">
+  <figure class="user-photo">
+    <img alt={user.login} src={user.avatar_url} />
+    <figcaption>{user.login}</figcaption>
+  </figure>
+  <div class="user-info">
+    <h2>{t("about.title")}</h2>
+    <p>
+      {t("about.description")}
+    </p>
 
-      <ul>
-        <li>
-          <a rel="noreferrer" target="_blank" href={user.html_url}>Github</a>
-        </li>
-        <li>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.linkedin.com/in/mathkruger/">Linkedin</a
-          >
-        </li>
-        <li>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            href="mailto:ms-kruger@hotmail.com">E-mail</a
-          >
-        </li>
-        <li>
-          <a rel="noreferrer" target="_blank" href="https://wa.me/5511959472884"
-            >Whatsapp</a
-          >
-        </li>
-      </ul>
-    </div>
+    <ul>
+      <li>
+        <a rel="noreferrer" target="_blank" href={user.html_url}>Github</a>
+      </li>
+      <li>
+        <a
+          rel="noreferrer"
+          target="_blank"
+          href="https://www.linkedin.com/in/mathkruger/">Linkedin</a
+        >
+      </li>
+      <li>
+        <a
+          rel="noreferrer"
+          target="_blank"
+          href="mailto:ms-kruger@hotmail.com">E-mail</a
+        >
+      </li>
+      <li>
+        <a rel="noreferrer" target="_blank" href="https://wa.me/5511959472884"
+          >Whatsapp</a
+        >
+      </li>
+    </ul>
   </div>
 </div>
 

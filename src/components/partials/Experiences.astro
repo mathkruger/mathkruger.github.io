@@ -68,13 +68,10 @@ const experiences = await fetchFirebaseData<Experience>("experiences", lang);
                 <strong>{x.company}</strong>
               </li>
               <li>
-                {getMonthName(getDate(x.startDate).getMonth())}/
-                {getDate(x.startDate).getFullYear()} -
+                {getMonthName(getDate(x.startDate).getMonth())}/{getDate(x.startDate).getFullYear()} -
                 {x.endDate
-                  ? " " +
-                    getMonthName(getDate(x.endDate).getMonth()) +
-                    "/" +
-                    getDate(x.endDate).getFullYear()
+                  ? getMonthName(getDate(x.endDate).getMonth()) +
+                    "/" + getDate(x.endDate).getFullYear()
                   : ` ${t("experiences.current")}`}
               </li>
             </ul>

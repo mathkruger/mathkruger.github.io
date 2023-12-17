@@ -8,7 +8,7 @@ import Title from "../common/Title.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const projects = await fetchFirebaseData<any>("projects", "en");
+const projects = await fetchFirebaseData<any>("projects", lang);
 const user = await fetchGithubData();
 ---
 
