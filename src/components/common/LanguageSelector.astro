@@ -1,0 +1,38 @@
+---
+import { getLangFromUrl } from "../../i18n/utils";
+import en from "../../images/us.png";
+import br from "../../images/br.png";
+import { Image } from "astro:assets";
+
+const lang = getLangFromUrl(Astro.url);
+const currentHash = Astro.url.hash;
+
+const flagsToShow = {
+  "pt-BR": en,
+  "en": br,
+};
+
+const urlToRedirect = {
+  "pt-BR": "/en" + currentHash,
+  "en": "/pt-BR" + currentHash,
+}
+---
+
+<a
+  style={{
+    width: "30px",
+    height: "25px",
+    padding: "0 5px",
+  }}
+  class="btn btn-ghost"
+  href={urlToRedirect[lang]}
+>
+  <Image
+    src={flagsToShow[lang]}
+    alt="Change Language"
+    style={{
+      width: "25px",
+      height: "20px"
+    }}
+  />
+</a>

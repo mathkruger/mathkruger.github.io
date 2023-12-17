@@ -1,0 +1,17 @@
+---
+import type { Skill } from "../../types/skill";
+
+type Props = Skill;
+
+const { label, percentage, icon } = Astro.props;
+---
+
+<div class="custom-progress-bar">
+  <p>
+    {icon.length > 0 ? <i class={"devicon-" + icon} /> : ""}
+    {label}
+  </p>
+  <div class="progress-bar progress-bar-no-arrow">
+    <div class="progress-bar-filled" style={{ width: percentage + "%" }}></div>
+  </div>
+</div>

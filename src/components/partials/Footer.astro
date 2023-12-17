@@ -1,0 +1,16 @@
+---
+import pack from "../../../package.json";
+import { getLangFromUrl, getLangUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<hr />
+<footer>
+  <p>{new Date().getFullYear()} - {t("footer.version")}: {pack.version}</p>
+  <a href={getLangUrl(lang, "#")}>
+    {t("footer.top")}
+  </a>
+</footer>
+<hr />

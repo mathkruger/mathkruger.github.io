@@ -1,0 +1,11 @@
+---
+import type { Skill } from "../../types/skill";
+import ProgressBar from "../common/ProgressBar.astro";
+type Props = {
+  skills: Skill[];
+};
+
+const { skills } = Astro.props;
+---
+
+{skills.map((x) => <ProgressBar {...x} />)}

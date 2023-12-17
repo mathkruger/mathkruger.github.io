@@ -1,47 +1,18 @@
 {
-  "name": "mathkruger.github.io",
-  "version": "1.2.0",
-  "private": true,
-  "homepage": "https://mathkruger.github.io/",
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "devicon": "^2.15.1",
-    "firebase": "^9.22.0",
-    "i18next": "^21.10.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-i18next": "^11.18.6",
-    "react-scripts": "5.0.1",
-    "terminal.css": "^0.7.2",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "mathkruger.github.io-astro",
+  "type": "module",
+  "version": "2.0.0",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "json-loader": "^0.5.7"
+  "dependencies": {
+    "@astrojs/check": "^0.3.3",
+    "astro": "^4.0.5",
+    "firebase": "^10.7.1",
+    "typescript": "^5.3.3"
   }
 }
