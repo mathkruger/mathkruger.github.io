@@ -1,0 +1,87 @@
+---
+import { fetchFirebaseData } from "../../data/fetch-firebase-data";
+import type { Experience } from "../../types/experience";
+import Card from "../common/Card.astro";
+import Title from "../common/Title.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const getDate = (date: string) => {
+  const dateParts = date.split("-").map((x) => parseInt(x));
+  const year = dateParts[0];
+  const month = dateParts[1];
+  const day = dateParts[2];
+
+  return new Date(year, month, day);
+};
+
+const getMonthName = (month: number) => {
+  const monthNames = {
+    en: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    "pt-BR": [
+      "Jan",
+      "Fev",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez",
+    ],
+  };
+
+  return monthNames[lang][month];
+};
+
+const experiences = await fetchFirebaseData<Experience>("experiences", lang);
+---
+
+<div id="experiences" class="experiences">
+  <Title content={t("experiences.title")} />
+
+  <div class="terminal-timeline">
+    {
+      experiences.map((x) => (
+        <Card title={x.name}>
+          <div>
+            <ul>
+              <li>
+                <strong>{x.company}</strong>
+              </li>
+              <li>
+                {getMonthName(getDate(x.startDate).getMonth())}/
+                {getDate(x.startDate).getFullYear()} -
+                {x.endDate
+                  ? " " +
+                    getMonthName(getDate(x.endDate).getMonth()) +
+                    "/" +
+                    getDate(x.endDate).getFullYear()
+                  : ` ${t("experiences.current")}`}
+              </li>
+            </ul>
+            <p>{x.description}</p>
+          </div>
+        </Card>
+      ))
+    }
+  </div>
+</div>

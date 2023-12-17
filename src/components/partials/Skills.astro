@@ -1,0 +1,42 @@
+---
+import { fetchFirebaseData } from "../../data/fetch-firebase-data";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { type Skill } from "../../types/skill";
+import Title from "../common/Title.astro";
+import SkillItem from "./SkillItem.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const techSkills = await fetchFirebaseData<Skill>("techSkills");
+const langSkills = await fetchFirebaseData<Skill>("langSkills", lang);
+---
+
+<div id="skills" class="skills">
+  <Title content={t("skills.title")} />
+
+  <div class="skills-container">
+    <div class="item">
+      <h4>{t("skills.techSkillsTitle")}</h4>
+      <SkillItem skills={techSkills} />
+    </div>
+
+    <div class="item">
+      <h4>{t("skills.langSkillsTitle")}</h4>
+      <SkillItem skills={langSkills} />
+    </div>
+  </div>
+</div>
+
+<style>
+  .skills-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .skills-container .item {
+    width: 100%;
+  }
+</style>

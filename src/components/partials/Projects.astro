@@ -1,0 +1,86 @@
+---
+import { fetchFirebaseData } from "../../data/fetch-firebase-data";
+import { fetchGithubData } from "../../data/fetch-github-data";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import Card from "../common/Card.astro";
+import Title from "../common/Title.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const projects = await fetchFirebaseData<any>("projects", "en");
+const user = await fetchGithubData();
+---
+
+<div id="projects" class="projects">
+  <Title content={t("projects.title")} />
+
+  <div class="projects-container">
+    {
+      projects.map((x) => (
+        <div class="item">
+          <Card title={x.name}>
+            <ul class="project-content">
+              <li class="description">{x.description}</li>
+              <li>
+                <a target="_blank" rel="noreferrer" href={x.repoUrl}>
+                  Repo
+                </a>
+              </li>
+              {x.url && (
+                <li>
+                  <a target="_blank" rel="noreferrer" href={x.url}>
+                    Website
+                  </a>
+                </li>
+              )}
+            </ul>
+          </Card>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="btn-container">
+    <a
+      rel="noreferrer"
+      target="_blank"
+      href={user.html_url + "?tab=repositories"}
+      class="btn btn-primary btn-ghost"
+    >
+      {t("projects.moreProjectsButton")}
+    </a>
+  </div>
+</div>
+
+<style>
+  .btn-container {
+    text-align: center;
+  }
+
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .projects-container .item {
+    width: calc(50% - 10px);
+  }
+
+  .projects-container .item .terminal-card {
+    height: 100%;
+  }
+
+  .projects-container .item .project-content {
+    padding: 1rem;
+  }
+
+  @media screen and (max-width: 666px) {
+    .projects-container .item {
+      width: 100%;
+    }
+  }
+</style>

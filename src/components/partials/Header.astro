@@ -1,0 +1,89 @@
+---
+import ColorModeSelector from "../common/ColorModeSelector.astro";
+import { getLangFromUrl, useTranslations, getLangUrl } from "../../i18n/utils";
+import LanguageSelector from "../common/LanguageSelector.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div id="main-header" class="terminal-nav">
+  <div class="terminal-logo">
+    <div class="logo terminal-prompt">
+      <a href={getLangUrl(lang, "#")} class="no-style">Matheus Kruger Dev</a>
+    </div>
+  </div>
+  <nav class="terminal-menu">
+    <ul>
+      <li>
+        <a class="menu-item" href={getLangUrl(lang, "#about")}>
+          {t("header.menu.about")}
+        </a>
+      </li>
+      <li>
+        <a class="menu-item" href={getLangUrl(lang, "#skills")}>
+          {t("header.menu.skills")}
+        </a>
+      </li>
+      <li>
+        <a class="menu-item" href={getLangUrl(lang, "#projects")}>
+          {t("header.menu.projects")}
+        </a>
+      </li>
+      <li>
+        <a class="menu-item" href={getLangUrl(lang, "#education")}>
+          {t("header.menu.education")}
+        </a>
+      </li>
+      <li>
+        <a class="menu-item" href={getLangUrl(lang, "#experiences")}>
+          {t("header.menu.experiences")}
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="btn-group">
+    <ColorModeSelector />
+    <LanguageSelector />
+  </div>
+</div>
+
+<style>
+  #main-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    z-index: 500;
+    max-width: var(--page-width);
+    padding: 0 calc(var(--global-space) * 2);
+    margin: 0 auto;
+  }
+
+  .btn-group {
+    width: 100px;
+    margin-left: 10px;
+  }
+
+  @media screen and (max-width: 666px) {
+    #main-header {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--secondary-color);
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      padding: 10px 0;
+    }
+
+    .terminal-menu {
+      display: none !important;
+    }
+
+    .btn-group {
+      width: auto;
+    }
+  }
+</style>

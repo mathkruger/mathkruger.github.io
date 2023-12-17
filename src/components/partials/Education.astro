@@ -1,0 +1,77 @@
+---
+import { fetchFirebaseData } from "../../data/fetch-firebase-data";
+import type { Course } from "../../types/course";
+import type { FormalEducation } from "../../types/formal-education";
+import Card from "../common/Card.astro";
+import Title from "../common/Title.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const formalEducation = await fetchFirebaseData<FormalEducation>(
+  "formalEducation",
+  lang
+);
+const courses = await fetchFirebaseData<Course>("courses", lang);
+---
+
+<div id="education" class="education">
+  <Title content={t("education.title")} />
+
+  <div class="education-container">
+    <div class="item">
+      <h4>{t("education.formalTitle")}</h4>
+      {
+        formalEducation.map((x) => (
+          <div style={{ margin: 10 + "px" }}>
+            <Card title={x.institution}>
+              <div>
+                <ul>
+                  <li>{x.course}</li>
+                  <li>
+                    {x.startYear} - {x.endYear}
+                  </li>
+                </ul>
+              </div>
+            </Card>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="item">
+      <h4>{t("education.coursesTitles")}</h4>
+      <ul>
+        {
+          courses.map((x) => (
+            <li>
+              <strong>{x.title}</strong> - {x.duration} hours
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .education-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .education-container .item {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 479px) {
+    .education-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+</style>
