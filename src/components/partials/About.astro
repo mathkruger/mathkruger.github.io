@@ -8,7 +8,7 @@ const t = useTranslations(lang);
 const user = await fetchGithubData();
 ---
 
-<div class="info-container">
+<div id="about" class="info-container">
   <figure class="user-photo">
     <img alt={user.login} src={user.avatar_url} />
     <figcaption>{user.login}</figcaption>

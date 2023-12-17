@@ -4,8 +4,6 @@ import { fetchFirebaseData } from "./fetch-firebase-data";
 export async function fetchGithubData() {
   const request = await fetch("https://api.github.com/users/mathkruger");
 
-  console.log(request);
-
   if (request.status === 403) {
     const fallback = await fetchFirebaseData<User>("fallbackUserData");
     return fallback[0];
