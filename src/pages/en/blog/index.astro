@@ -1,0 +1,13 @@
+---
+import { blogStaticPaths, getBlogPostsListByLanguage } from '../../../utils/blog-static-paths';
+import BlogList from '../../../components/BlogList.astro';
+
+export async function getStaticPaths() {
+  return await blogStaticPaths();
+}
+
+const lang = "en";
+const posts = await getBlogPostsListByLanguage(lang);
+---
+
+<BlogList posts={posts} />

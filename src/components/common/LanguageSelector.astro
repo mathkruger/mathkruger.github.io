@@ -5,27 +5,21 @@ import br from "../../images/br.png";
 import { Image } from "astro:assets";
 
 const lang = getLangFromUrl(Astro.url);
-const currentHash = Astro.url.hash;
 
 const flagsToShow = {
   "pt-BR": en,
   "en": br,
 };
-
-const urlToRedirect = {
-  "pt-BR": "/en" + currentHash,
-  "en": "/pt-BR" + currentHash,
-}
 ---
 
 <a
+  id="language-selector"
   style={{
     width: "30px",
     height: "25px",
     padding: "0 5px",
   }}
   class="btn btn-ghost"
-  href={urlToRedirect[lang]}
 >
   <Image
     src={flagsToShow[lang]}
@@ -36,3 +30,18 @@ const urlToRedirect = {
     }}
   />
 </a>
+
+<script is:inline>
+  const languageSelector = document.querySelector("a#language-selector");
+  const currentUrl = location.href;
+
+  console.log(languageSelector, currentUrl);
+
+  if (currentUrl.includes("en")) {
+    const url = currentUrl.replace("/en", "/pt-BR");
+    languageSelector.href = url;
+  } else if (currentUrl.includes("pt-BR")) {
+    const url = currentUrl.replace("/pt-BR", "/en");
+    languageSelector.href = url;
+  }
+</script>

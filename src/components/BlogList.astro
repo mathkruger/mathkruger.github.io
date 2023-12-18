@@ -1,0 +1,76 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import BlogLayout from "../layouts/BlogLayout.astro";
+import Card from "./common/Card.astro";
+import Title from "./common/Title.astro";
+
+type Props = {
+  posts: {
+    slug: string;
+    title: string;
+    cover: string;
+  }[];
+};
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { posts } = Astro.props;
+---
+
+<BlogLayout>
+  <Title content="Blog" />
+
+  <p>{t("blog.description")}</p>
+
+  <div class="posts-list">
+    {
+      posts.map((x) => (
+        <a class="post-card" href={`blog/${x.slug}`}>
+          <Card title={x.title}>
+            <div
+              class="cover"
+              style={{
+                backgroundImage: `url(/${x.cover})`,
+              }}
+            />
+          </Card>
+        </a>
+      ))
+    }
+  </div>
+</BlogLayout>
+
+<style>
+  .posts-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .posts-list .post-card {
+    width: calc(25% - 1rem);
+  }
+
+  .cover {
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 1rem solid var(--background-color);
+  }
+
+  @media screen and (max-width: 980px) {
+    .posts-list .post-card {
+      width: calc(50% - 1rem);
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .posts-list .post-card {
+      width: 100%;
+    }
+  }
+</style>
