@@ -31,6 +31,7 @@ export const ui = {
     "experiences.title": "Experiences",
     "experiences.current": "Current",
 
+    "blog.back": "Back",
     "blog.createdBy": "Written by",
     "blog.description": "Just a place to share my knowledge and talk about what I'm studying at the moment.",
 
@@ -62,6 +63,7 @@ export const ui = {
     "experiences.title": "Experiências",
     "experiences.current": "Atualmente",
 
+    "blog.back": "Voltar",
     "blog.createdBy": "Escrito por",
     "blog.description": "Apenas um local onde compartilho um pouco do meu conhecimento e sobre coisas que tenho estudado.",
 

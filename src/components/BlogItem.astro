@@ -18,7 +18,9 @@ const formattedDate = new Date(date).toLocaleDateString(lang);
 ---
 
 <BlogLayout>
-  <a class="back-button" href={`/${lang}/blog`}>Back</a>
+  <a class="back-button" href={`/${lang}/blog`}>
+    {t("blog.back")}
+  </a>
   <Title content={title} />
   <p class="info">{t("blog.createdBy")} {author} • {formattedDate}</p>
 
