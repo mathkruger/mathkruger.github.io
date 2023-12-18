@@ -26,7 +26,7 @@ const { posts } = Astro.props;
   <div class="posts-list">
     {
       posts.map((x) => (
-        <a class="post-card" href={`blog/${x.slug}`}>
+        <a class="post-card" href={`/${lang}/blog/${x.slug}`}>
           <Card title={x.title}>
             <div
               class="cover"
