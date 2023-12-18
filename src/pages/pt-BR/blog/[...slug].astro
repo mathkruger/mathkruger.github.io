@@ -1,0 +1,16 @@
+---
+import { blogStaticPaths } from '../../../utils/blog-static-paths';
+import BlogItem from '../../../components/BlogItem.astro';
+
+export async function getStaticPaths() {
+  return await blogStaticPaths("pt-BR");
+}
+
+const page = Astro.props;
+
+const { Content } = await page.render();
+---
+
+<BlogItem {...page.data}>
+  <Content />
+</BlogItem>

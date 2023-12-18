@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Title from "./common/Title.astro";
+import BlogLayout from "../layouts/BlogLayout.astro";
+
+type Props = {
+  cover: string,
+  title: string,
+  author: string,
+  date: Date
+}
+
+const { cover, title, author, date } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const formattedDate = new Date(date).toLocaleDateString(lang);
+---
+
+<BlogLayout>
+  <a class="back-button" href={`/${lang}/blog`}>Back</a>
+  <Title content={title} />
+  <p class="info">{t("blog.createdBy")} {author} • {formattedDate}</p>
+
+  <div class="cover" style={{
+    backgroundImage: `url(/${cover})`
+  }}></div>
+  
+  <slot />
+</BlogLayout>
+
+<style>
+  .back-button {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .info {
+    margin-top: -1rem;
+  }
+
+  .cover {
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+</style>

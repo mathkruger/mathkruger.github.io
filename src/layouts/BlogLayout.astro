@@ -1,0 +1,17 @@
+---
+import Footer from "../components/partials/Footer.astro";
+import Header from "../components/partials/Header.astro";
+import Layout from "./Layout.astro";
+---
+
+<Layout title="Matheus Kruger Dev - Blog">
+  <Header />
+
+  <br />
+  
+  <div class="container">
+    <slot />
+
+    <Footer />
+  </div>
+</Layout>

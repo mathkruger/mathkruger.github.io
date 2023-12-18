@@ -40,6 +40,11 @@ const t = useTranslations(lang);
           {t("header.menu.experiences")}
         </a>
       </li>
+      <li class="show-mobile">
+        <a class="menu-item" href={getLangUrl(lang, "blog")}>
+          Blog
+        </a>
+      </li>
     </ul>
   </nav>
 
@@ -65,6 +70,18 @@ const t = useTranslations(lang);
     margin-left: 10px;
   }
 
+  .terminal-menu ul {
+    gap: 1rem;
+  }
+
+  .terminal-menu li {
+    margin-right: 0 !important;
+  }
+
+  .terminal-menu ul li a {
+    font-size: 12px;
+  }
+
   @media screen and (max-width: 666px) {
     #main-header {
       flex-direction: row;
@@ -78,8 +95,13 @@ const t = useTranslations(lang);
       padding: 10px 0;
     }
 
-    .terminal-menu {
+    .terminal-menu ul li:not(.show-mobile) {
       display: none !important;
+    }
+
+    .terminal-menu {
+      width: auto;
+      margin-left: auto;
     }
 
     .btn-group {
