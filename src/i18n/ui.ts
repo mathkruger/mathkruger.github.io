@@ -16,7 +16,9 @@ export const ui = {
 
     "about.title": "About me",
     "about.description": "Hey! I'm Matheus, I've been a fullstack developer for 6 years, but I like to play with technology since I was small kid. I love learning new things and doing some projects for fun. Want to talk to me? Just contact me!",
-    
+    "about.buyCoffe": "Buy me a coffee",
+    "about.support": "Wanna support me?",
+
     "skills.title": "Skills",
     "skills.techSkillsTitle": "Tech",
     "skills.langSkillsTitle": "Languages",
@@ -49,7 +51,9 @@ export const ui = {
 
     "about.title": "Sobre mim",
     "about.description": "Olá! Me chamo Matheus, sou desenvolvedor fullstack há 6 anos, mas gosto de brincar com tecnologia desde muito cedo. Amo aprender coisas novas e fazer alguns projetos por diversão. Quer falar comigo? Entre em contato!",
-    
+    "about.buyCoffe": "Me pague um café",
+    "about.support": "Quer me apoiar?",
+
     "skills.title": "Habilidades",
     "skills.techSkillsTitle": "Tecnologias",
     "skills.langSkillsTitle": "Idiomas",

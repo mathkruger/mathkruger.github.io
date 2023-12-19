@@ -31,10 +31,8 @@ const user = await fetchGithubData();
         >
       </li>
       <li>
-        <a
-          rel="noreferrer"
-          target="_blank"
-          href="mailto:ms-kruger@hotmail.com">E-mail</a
+        <a rel="noreferrer" target="_blank" href="mailto:ms-kruger@hotmail.com"
+          >E-mail</a
         >
       </li>
       <li>
@@ -43,6 +41,20 @@ const user = await fetchGithubData();
         >
       </li>
     </ul>
+
+    <h3 class="support-title">{t("about.support")}</h3>
+    <a
+      class="buy-me-a-coffee"
+      rel="noreferrer"
+      target="_blank"
+      href="https://www.buymeacoffee.com/mathkruger"
+    >
+      <img
+        src={`https://img.buymeacoffee.com/button-api/?text=${t(
+          "about.buyCoffe"
+        )}&emoji=&slug=mathkruger&button_colour=BD5FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00`}
+      />
+    </a>
   </div>
 </div>
 
@@ -59,6 +71,18 @@ const user = await fetchGithubData();
     height: 200px;
     border-radius: 50%;
     border: 3px solid;
+  }
+
+  .support-title {
+    margin-bottom: 10px;
+  }
+
+  .buy-me-a-coffee img {
+    width: 200px;
+  }
+
+  .buy-me-a-coffee:hover {
+    background-color: transparent;
   }
 
   @media screen and (max-width: 479px) {
