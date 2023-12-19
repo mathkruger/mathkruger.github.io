@@ -7,6 +7,7 @@ export const defaultLanguage = "en";
 
 export const ui = {
   "en": {
+    "website.description": "My personal website/blog, to expose my experiences and ideas.",
     "header.menu.about": "About",
     "header.menu.skills": "Skills",
     "header.menu.projects": "Projects",
@@ -39,6 +40,7 @@ export const ui = {
     "footer.top": "Back to top",
   },
   "pt-BR": {
+    "website.description": "Meu site/blog pessoal, para expor minhas experiências e ideias.",
     "header.menu.about": "Sobre",
     "header.menu.skills": "Habilidades",
     "header.menu.projects": "Projetos",
