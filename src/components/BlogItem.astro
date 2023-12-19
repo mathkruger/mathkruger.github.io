@@ -1,15 +1,10 @@
 ---
-import { Image } from "astro:assets";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Title from "./common/Title.astro";
 import BlogLayout from "../layouts/BlogLayout.astro";
+import type { Post } from "../types/post";
 
-type Props = {
-  cover: string,
-  title: string,
-  author: string,
-  date: Date
-}
+type Props = Post;
 
 const { cover, title, author, date } = Astro.props;
 const lang = getLangFromUrl(Astro.url);

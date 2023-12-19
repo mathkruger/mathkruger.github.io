@@ -21,9 +21,8 @@ export async function getBlogPostsListByLanguage(lang: string) {
   const posts = await blogStaticPaths();
   return posts.filter(x => x.params.lang.toLocaleLowerCase() === lang.toLocaleLowerCase()).map(x => {
     return {
-      slug: x.params.slug || "",
-      title: x.props.data.title,
-      cover: x.props.data.cover
+      ...x.props.data,
+      slug: x.params.slug || ""
     }
   });
 }

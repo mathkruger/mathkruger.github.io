@@ -1,21 +1,24 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import BlogLayout from "../layouts/BlogLayout.astro";
+import type { Post } from "../types/post";
 import Card from "./common/Card.astro";
 import Title from "./common/Title.astro";
 
 type Props = {
-  posts: {
+  posts: ({
     slug: string;
-    title: string;
-    cover: string;
-  }[];
+  } & Post)[];
 };
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const { posts } = Astro.props;
+
+const formattedDate = (date: Date) => {
+  return new Date(date).toLocaleDateString(lang);
+};
 ---
 
 <BlogLayout>
@@ -28,12 +31,16 @@ const { posts } = Astro.props;
       posts.map((x) => (
         <a class="post-card" href={`/${lang}/blog/${x.slug}`}>
           <Card title={x.title}>
-            <div
-              class="cover"
-              style={{
-                backgroundImage: `url(/${x.cover})`,
-              }}
-            />
+            <div>
+              <div
+                class="cover"
+                style={{
+                  backgroundImage: `url(/${x.cover})`,
+                }}
+              />
+
+              <p class="info">{t("blog.createdBy")} {x.author} • {formattedDate(x.date)}</p>
+            </div>
           </Card>
         </a>
       ))
@@ -59,7 +66,10 @@ const { posts } = Astro.props;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border: 1rem solid var(--background-color);
+  }
+
+  .info {
+    margin-top: 0.5rem;
   }
 
   @media screen and (max-width: 980px) {
