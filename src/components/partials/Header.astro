@@ -1,7 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations, getLangUrl } from "../../i18n/utils";
-import ColorModeSelector from "../client/ColorModeSelector/ColorModeSelector.tsx";
-import LanguageSelector from "../client/LanguageSelector.tsx";
+import { ColorModeSelector } from "../client/ColorModeSelector";
+import { LanguageSelector } from "../client/LanguageSelector";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -49,8 +49,8 @@ const t = useTranslations(lang);
   </nav>
 
   <div class="btn-group">
-    <ColorModeSelector client:only />
-    <LanguageSelector client:only />
+    <ColorModeSelector client:only="react" />
+    <LanguageSelector client:only="react" />
   </div>
 </div>
 

@@ -1,6 +1,6 @@
 import { getLangFromUrl } from "../../i18n/utils";
 
-export default function LanguageSelector() {
+export function LanguageSelector() {
   const lang = getLangFromUrl(new URL(location.href));
   const flag = lang === "en" ? "/br.png" : "/us.png";
 
@@ -19,7 +19,7 @@ export default function LanguageSelector() {
 
   return (
     <button
-      onClick={changeLanguage}
+      onClick={() => changeLanguage()}
       style={{
         width: "30px",
         height: "25px",

@@ -10,8 +10,7 @@ import type { TranslatedData } from "../types/translated-data";
 
 export async function fetchFirebaseData<TObject>(
   collectionName: string,
-  language?: "en" | "pt-BR",
-  single?: boolean
+  language?: "en" | "pt-BR"
 ): Promise<TObject[]> {
   const db = getFirestore(firebase);
   const q = query(collection(db, collectionName), orderBy("order", "asc"));

@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import styles from "./ColorModeSelector.module.css";
 
-export default function ColorModeSelector() {
+export function ColorModeSelector() {
   const getInitialTheme = () => {
-    if (localStorage && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme") as "dark" | "light";
+    if (window.localStorage && window.localStorage.getItem("theme")) {
+      return window.localStorage.getItem("theme") as "dark" | "light";
     }
   
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -28,15 +27,20 @@ export default function ColorModeSelector() {
 
   const handleToggleClick = () => {
     const newTheme = theme === "light" ? "dark" : "light";
-    localStorage.setItem("theme", newTheme);
+    window.localStorage.setItem("theme", newTheme);
 
     setTheme(newTheme);
   };
 
   return (
     <button
-      onClick={handleToggleClick}
-      className={`${styles.toggleButton} btn btn-ghost`}
+      onClick={() => handleToggleClick()}
+      style={{
+        width: "30px",
+        height: "25px",
+        padding: "0 5px",
+      }}
+      className="btn btn-ghost"
     >
       {theme === "light" && <span>🌙</span>}
       {theme === "dark" && <span>☀️</span>}

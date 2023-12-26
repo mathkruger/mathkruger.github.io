@@ -5,5 +5,7 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: 'https://mathkruger.github.io',
   base: '/',
-  integrations: [react()]
+  integrations: [react({
+    experimentalReactChildren: true
+  })]
 });
