@@ -9,87 +9,94 @@ const user = await fetchGithubData();
 ---
 
 <div id="about" class="info-container">
-  <figure class="user-photo">
-    <img alt={user.login} src={user.avatar_url} />
-    <figcaption>{user.login}</figcaption>
-  </figure>
-  <div class="user-info">
-    <h2>{t("about.title")}</h2>
-    <p>
-      {t("about.description")}
-    </p>
+    <figure class="user-photo">
+        <img alt={user.login} src={user.avatar_url} />
+        <figcaption>{user.login}</figcaption>
+    </figure>
+    <div class="user-info">
+        <h2>{t("about.title")}</h2>
+        <p>
+            {t("about.description")}
+        </p>
 
-    <ul>
-      <li>
-        <a rel="noreferrer" target="_blank" href={user.html_url}>Github</a>
-      </li>
-      <li>
+        <ul>
+            <li>
+                <a rel="noreferrer" target="_blank" href={user.html_url}
+                    >Github</a
+                >
+            </li>
+            <li>
+                <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://www.linkedin.com/in/mathkruger/">Linkedin</a
+                >
+            </li>
+            <li>
+                <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href="mailto:ms-kruger@hotmail.com">E-mail</a
+                >
+            </li>
+            <li>
+                <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://wa.me/5511959472884">Whatsapp</a
+                >
+            </li>
+        </ul>
+
+        <h3 class="support-title no-print">{t("about.support")}</h3>
         <a
-          rel="noreferrer"
-          target="_blank"
-          href="https://www.linkedin.com/in/mathkruger/">Linkedin</a
+            class="buy-me-a-coffee no-print"
+            rel="noreferrer"
+            target="_blank"
+            href="https://www.buymeacoffee.com/mathkruger"
         >
-      </li>
-      <li>
-        <a rel="noreferrer" target="_blank" href="mailto:ms-kruger@hotmail.com"
-          >E-mail</a
-        >
-      </li>
-      <li>
-        <a rel="noreferrer" target="_blank" href="https://wa.me/5511959472884"
-          >Whatsapp</a
-        >
-      </li>
-    </ul>
-
-    <h3 class="support-title">{t("about.support")}</h3>
-    <a
-      class="buy-me-a-coffee"
-      rel="noreferrer"
-      target="_blank"
-      href="https://www.buymeacoffee.com/mathkruger"
-    >
-      <img
-        src={`https://img.buymeacoffee.com/button-api/?text=${t(
-          "about.buyCoffe"
-        )}&emoji=&slug=mathkruger&button_colour=BD5FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00`}
-      />
-    </a>
-  </div>
+            <img
+                alt={t("about.buyCoffe")}
+                src={`https://img.buymeacoffee.com/button-api/?text=${t(
+                    "about.buyCoffe",
+                )}&emoji=&slug=mathkruger&button_colour=BD5FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00`}
+            />
+        </a>
+    </div>
 </div>
 
 <style>
-  .info-container {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
-  .info-container .user-photo img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 3px solid;
-  }
-
-  .support-title {
-    margin-bottom: 10px;
-  }
-
-  .buy-me-a-coffee img {
-    width: 200px;
-  }
-
-  .buy-me-a-coffee:hover {
-    background-color: transparent;
-  }
-
-  @media screen and (max-width: 479px) {
     .info-container {
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+        justify-content: space-between;
     }
-  }
+
+    .info-container .user-photo img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 3px solid;
+    }
+
+    .support-title {
+        margin-bottom: 10px;
+    }
+
+    .buy-me-a-coffee img {
+        width: 200px;
+    }
+
+    .buy-me-a-coffee:hover {
+        background-color: transparent;
+    }
+
+    @media screen and (max-width: 479px) {
+        .info-container {
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+    }
 </style>

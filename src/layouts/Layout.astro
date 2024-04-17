@@ -1,8 +1,8 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { ViewTransitions } from "astro:transitions";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 interface Props {
-  title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
@@ -12,43 +12,60 @@ const t = useTranslations(lang);
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={t("website.description")} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <ViewTransitions />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={t("website.description")} />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <ViewTransitions />
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
-    />
-  </head>
-  <body>
-    <slot />
-  </body>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+        />
+    </head>
+    <body>
+        <slot />
+        <style is:global>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body.dark {
+                --background-color: #222225;
+                --font-color: #e8e9ed;
+                --invert-font-color: #222225;
+                --secondary-color: #a3abba;
+                --tertiary-color: #a3abba;
+                --primary-color: #62c4ff;
+                --error-color: #ff3c74;
+                --progress-bar-background: #3f3f44;
+                --progress-bar-fill: #62c4ff;
+                --code-bg-color: #3f3f44;
+            }
+
+            @media print {
+                .no-print {
+                    display: none;
+                }
+
+                * {
+                    break-inside: avoid;
+                    font-size: 90%;
+                }
+            }
+
+            @media screen {
+                .only-print {
+                    display: none;
+                }
+            }
+        </style>
+    </body>
 </html>
-<style is:global>
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body.dark {
-    --background-color: #222225;
-    --font-color: #e8e9ed;
-    --invert-font-color: #222225;
-    --secondary-color: #a3abba;
-    --tertiary-color: #a3abba;
-    --primary-color: #62c4ff;
-    --error-color: #ff3c74;
-    --progress-bar-background: #3f3f44;
-    --progress-bar-fill: #62c4ff;
-    --code-bg-color: #3f3f44;
-  }
-</style>

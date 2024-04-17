@@ -6,30 +6,32 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<hr />
-<footer>
-  <p>{new Date().getFullYear()} - {t("footer.version")}: {pack.version}</p>
-  <a href={getLangUrl(lang, "#")}>
-    {t("footer.top")}
-  </a>
+<hr class="no-print" />
+<footer class="no-print">
+    <p class="no-print">
+        {new Date().getFullYear()} - {t("footer.version")}: {pack.version}
+    </p>
+    <a class="no-print" href={getLangUrl(lang, "#")}>
+        {t("footer.top")}
+    </a>
 </footer>
-<hr />
+<hr class="no-print" />
 
 <style>
-  footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  footer p {
-    margin-bottom: 0;
-  }
-
-  @media screen and (max-width: 666px){
     footer {
-      flex-direction: column;
-      gap: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-  }
+
+    footer p {
+        margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 666px) {
+        footer {
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
 </style>
